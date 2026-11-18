@@ -30,6 +30,23 @@ console.log(drycker.join(', '))
 //    TypeScript klagar på storlek. Beskriv objektet med en interface där storlek är valfri (storlek?: string).
 // d) skriv ut Object.keys(kopp)
 // TODO
+// a
+//const kopp = { namn: 'Latte', pris: 45, vegetarisk: true }
+// b
+//console.log(kopp.namn)
+//console.log(kopp.pris)
+// c
+type kopp = {
+    namn: string
+    pris: number
+    vegetarisk: boolean
+    storlek?: string
+}
+const kopp: kopp = { namn: 'Latte', pris: 45, vegetarisk: true }
+kopp.pris = 48
+kopp.storlek = 'stor'
+// d
+console.log(Object.keys(kopp))
 
 // UPPGIFT 3: arrayer av objekt
 // a) skriv ut hur många rätter menyn har och namnet på den första
