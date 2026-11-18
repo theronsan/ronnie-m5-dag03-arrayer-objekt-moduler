@@ -31,11 +31,46 @@ export function prislista(meny: Ratt[]): string[] {
 // 4. Hitta en rätt via id (find). Returnerar objektet, eller undefined om det saknas.
 export function hittaRatt(meny: Ratt[], id: number): Ratt | undefined {
     // TODO
+    const hittaID = meny.find((ratt) => ratt.id === id)
+    return hittaID
 }
 
 // 5. Den billigaste rätten (reduce). Returnerar objektet. Tom lista ger undefined.
 export function billigast(meny: Ratt[]): Ratt | undefined {
     // TODO
+    /*
+    // MED FOR OF LOOP
+    // om menyn är tom returnera undefined
+    if (meny.length === 0) {
+        return undefined
+    }
+    // låt den första första rätten vara den billigaste
+    let billigaste = meny[0]
+    // går igenom alla rätter
+    for (const ratt of meny) {
+        // om en rätt har ett lägre pris
+        if (ratt.pris < billigaste.pris) {
+            // uppdatera billigaste
+            billigaste = ratt
+        }
+    }
+    // returnera billigaste
+    return billigaste
+ */
+
+    // MED REDUCE
+    // om menyn är tom returnera undefined
+    if (meny.length === 0) {
+        return undefined
+    }
+
+    const lägstaPriset = meny.reduce((billigaste, ratt) => {
+        if (ratt.pris < billigaste.pris) {
+            return ratt
+        }
+        return billigaste
+    })
+    return lägstaPriset
 }
 
 // 6. Sortera efter pris, billigast först. Returnerar en NY array.
