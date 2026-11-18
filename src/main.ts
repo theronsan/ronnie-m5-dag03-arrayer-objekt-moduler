@@ -48,6 +48,9 @@ kopp.storlek = 'stor'
 // d
 console.log(Object.keys(kopp))
 
+// Använd punkt . när jag känner till egenskapens namn
+// Använd hakparantes [] när jag vill komma åt värden i en array
+
 // UPPGIFT 3: arrayer av objekt
 // a) skriv ut hur många rätter menyn har och namnet på den första
 // b) loopa med for...of och skriv ut "namn – pris kr" för varje rätt
