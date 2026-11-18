@@ -8,16 +8,24 @@ import type { Ratt, OrderRad } from './typer'
 export function vegetariskaRatter(meny: Ratt[]): Ratt[] {
     // TODO
     // Jag gissar att vegetariskaRatter förväntar en boolean (true eller false) och att filter är den array-metod som passar?
+    const veg = meny.filter((ratt) => ratt.vegetarisk === true)
+    return veg
 }
 
 // 2. Bara namnen, som en array av text (map). ["Kardemummabulle", ...]
 export function rattNamn(meny: Ratt[]): string[] {
     // TODO
+    const namn = meny.map((ratt) => ratt.namn)
+    return namn
 }
 
 // 3. En prislista som text: "Kardemummabulle – 35 kr" (map + formateraPris)
 export function prislista(meny: Ratt[]): string[] {
     // TODO
+    const prislistan = meny.map(
+        (ratt) => `${ratt.namn} – ` + formateraPris(ratt.pris)
+    )
+    return prislistan
 }
 
 // 4. Hitta en rätt via id (find). Returnerar objektet, eller undefined om det saknas.
