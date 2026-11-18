@@ -57,12 +57,12 @@ console.log(Object.keys(kopp))
 // c) skriv ut namnet på den sista rätten utan att veta antalet (tips: length - 1)
 // TODO
 // a
-console.log(drycker.length)
-console.log(drycker[0])
+console.log(meny.length)
+console.log(meny[0].namn)
+
 // b
-const koppar: kopp[] = [kopp]
-for (const dryck of koppar) {
-    console.log(kopp.namn + ' - ' + kopp.pris + ' kr')
+for (const ratt of meny) {
+    console.log(ratt.namn + ' - ' + ratt.pris + ' kr')
 }
 // c
-console.log(drycker[drycker.length - 1])
+console.log(meny[meny.length - 1].namn)
