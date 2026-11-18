@@ -114,4 +114,10 @@ export function perKategori(meny: Ratt[]): Record<string, number> {
 // 9. En kopia av rätten med nytt pris. Originalet får INTE ändras (spread: { ...ratt }).
 export function medNyttPris(ratt: Ratt, nyttPris: number): Ratt {
     // TODO
+    const ändraPris = { ...ratt, pris: nyttPris }
+    return ändraPris
 }
+
+// en anledning till att det är bättre att skriva { ...ratt, pris: nyttPris } än ratt.pris = nyttPris
+// är om man vill återgå till originalpriset senare. nyttPris kan t.ex vara ett tillfälligt kampanjpris under Alla hjärtans dag eller liknande.
+// Det går också att jämföra det nya priset med originalpriset om man vill visa med hur många procent priset har förändrats med.
