@@ -53,3 +53,13 @@ console.log(Object.keys(kopp))
 // b) loopa med for...of och skriv ut "namn – pris kr" för varje rätt
 // c) skriv ut namnet på den sista rätten utan att veta antalet (tips: length - 1)
 // TODO
+// a
+console.log(drycker.length)
+console.log(drycker[0])
+// b
+const koppar: kopp[] = [kopp]
+for (const dryck of koppar) {
+    console.log(kopp.namn + ' - ' + kopp.pris + ' kr')
+}
+// c
+console.log(drycker[drycker.length - 1])
