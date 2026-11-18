@@ -77,6 +77,8 @@ export function billigast(meny: Ratt[]): Ratt | undefined {
 //    Den ursprungliga listan får INTE ändras (sort ändrar originalet, så kopiera först).
 export function sorteraEfterPris(meny: Ratt[]): Ratt[] {
     // TODO
+    const billigastFörst = [...meny].sort((a, b) => a.pris - b.pris)
+    return billigastFörst
 }
 
 // 7. Totalpris för en order. order = [{ id: 1, antal: 2 }, { id: 5, antal: 1 }]
